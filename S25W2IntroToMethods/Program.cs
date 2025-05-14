@@ -16,16 +16,47 @@
             Console.WriteLine("cir.radius = " + cir.radius);
             Console.WriteLine("arr[0] = " + arr[0]);
 
-            ChangeValue(num, str, cir, arr);
+            ChangeValue(ref num, ref str, cir, arr);
 
             Console.WriteLine("\nAfter changes:\n");
             Console.WriteLine("num = " + num);
             Console.WriteLine("str = " + str);
             Console.WriteLine("cir.radius = " + cir.radius);
             Console.WriteLine("arr[0] = " + arr[0]);
+
+            Console.WriteLine("\n\n");
+
+
+
+            // output parameters example
+            double r = 5;
+            //double circum, area;
+
+            CalculateCircumAndArea(r, out double circum, out double area);
+
+            Console.WriteLine("Circumference = " + circum);
+            Console.WriteLine("Area = " + area);
+
+
+
+            Console.Write("\n\nEnter a number: ");
+            if (int.TryParse(Console.ReadLine(), out int n))
+                Console.WriteLine("n = " + n);
+            else
+                Console.WriteLine("Invalid input. Please try again.");
         }
 
-        static void ChangeValue(int n, string s, Circle c, int[] a)
+
+        // output parameter example
+        static void CalculateCircumAndArea(double r, out double circum, out double area)
+        {
+            circum = 2 * Math.PI * r;
+            area = Math.PI * r * r;
+        }
+
+
+
+        static void ChangeValue(ref int n, ref string s, Circle c, int[] a)
         {
             n = 100;
             s = "world";
