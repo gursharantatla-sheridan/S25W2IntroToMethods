@@ -39,12 +39,61 @@
 
 
 
-            Console.Write("\n\nEnter a number: ");
-            if (int.TryParse(Console.ReadLine(), out int n))
-                Console.WriteLine("n = " + n);
-            else
-                Console.WriteLine("Invalid input. Please try again.");
+            //Console.Write("\n\nEnter a number: ");
+            //if (int.TryParse(Console.ReadLine(), out int n))
+            //    Console.WriteLine("n = " + n);
+            //else
+            //    Console.WriteLine("Invalid input. Please try again.");
+
+            Console.WriteLine("\n\n");
+
+
+
+            int a = 4, b = 6, c = 2;
+
+            Console.WriteLine("a = " + a + ", b = " + b + ", c = " + c);
+            Console.WriteLine($"a = {a}, b = {b}, c = {c}");
+
+            Console.WriteLine("a = {0}, b = {1}, c = {2}", a, b, c);
+
+
+
+
+            // parameter array example
+            int[] myArr = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+
+            PrintArray(myArr);
+            PrintArray(5, 3, 2, 4, 5, 6, 7, 8, 6, 5);
+
+
+
+            PersonInfo("John", 32);
+            PersonInfo(name: "John", age: 32);
+            PersonInfo(age: 32, name: "John");
+            //PersonInfo(32, "John");
+
+            PersonInfo("John");
         }
+
+
+        static void PersonInfo(string name, int age = 18)
+        {
+            // method body
+        }
+
+
+
+        // parameter array example
+        static void PrintArray(params int[] arr)
+        {
+            Console.WriteLine("\n\nTotal number of items = " + arr.Length);
+
+            foreach (int i in arr)
+                Console.Write(i + " ");
+            Console.WriteLine();
+        }
+
+
 
 
         // output parameter example
